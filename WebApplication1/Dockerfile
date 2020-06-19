@@ -6,7 +6,7 @@ EXPOSE 8443
 FROM ashish1981/s390x-clefos-mono AS build
 WORKDIR /src
 COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
-RUN mono restore "WebApplication1/WebApplication1.csproj"
+#RUN mono restore "WebApplication1/WebApplication1.csproj"
 COPY . .
 WORKDIR "/src/WebApplication1"
 RUN mono build "WebApplication1.csproj" -c Release -o /app
